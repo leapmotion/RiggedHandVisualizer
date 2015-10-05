@@ -27,6 +27,7 @@ xcuserdata
 Release
 Debug
 *.blend1
+*.apk
 
 #User Test Results
 /TestResults/*
