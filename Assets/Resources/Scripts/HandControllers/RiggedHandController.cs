@@ -1,4 +1,5 @@
-﻿using UnityEngine;	
+﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using Leap;
@@ -12,6 +13,7 @@ public class RiggedHandController : MonoBehaviour {
 	Controller m_leapController;
 	SkeletalHandController m_skeletalDrawer;
 	PauseManager m_pauseManager;
+	public Text m_DataFPS;
 
 	// Use this for initialization
 	void Start () {
@@ -93,6 +95,10 @@ public class RiggedHandController : MonoBehaviour {
 			}
 			
 		}
+
+		if (m_DataFPS != null)
+			m_DataFPS.text = "Data FPS:" + f.CurrentFramesPerSecond.ToString ("f2");
+		Debug.LogWarning("Update: data fps:" + f.CurrentFramesPerSecond.ToString ("f2"));
 
 		// clear out stale hands.
 		List<int> staleIDs = new List<int>();
